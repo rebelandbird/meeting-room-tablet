@@ -15,6 +15,7 @@ public class ReservatorActivity extends Activity {
 
     private final ReservatorAppHandler handler = new ReservatorAppHandler();
     private GoToFavouriteRoom goToFavouriteRoomRunable;
+    public static final long GOTO_FAVOURITE_ROOM_DELAY = 30 * 1000;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +62,7 @@ public class ReservatorActivity extends Activity {
 
     private void startAutoGoToFavouriteRoom() {
         if (isPrehensible()) {
-            handler.postDelayed(goToFavouriteRoomRunable, 60000);
+            handler.postDelayed(goToFavouriteRoomRunable, GOTO_FAVOURITE_ROOM_DELAY);
         }
     }
 
