@@ -131,8 +131,42 @@
             android:id="@+id/roomListView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:layout_marginBottom="10dp"
             android:layout_below="@+id/roomListLabel"
             android:cacheColorHint="@android:color/transparent"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/roomListView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/brandTextLabel"
+                android:textColor="#000"
+                android:id="@+id/brandTextLabel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/brandTextHint"
+                android:id="@+id/brandTextHint" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/brandEditText" />
+
+        </LinearLayout>
+
     </RelativeLayout>
 
 </ScrollView>

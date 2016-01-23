@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ public class SettingsActivity extends ReservatorActivity {
     SharedPreferences settings;
     HashSet<String> unselectedRooms;
     ArrayList<String> roomNames;
+    EditText brandEditText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -130,6 +132,9 @@ public class SettingsActivity extends ReservatorActivity {
                 finish();
             }
         });
+
+        brandEditText = (EditText) findViewById(R.id.brandEditText);
+        brandEditText.setText(settings.getString("brandText", ""));
     }
 
     @Override
@@ -155,6 +160,11 @@ public class SettingsActivity extends ReservatorActivity {
             selectedResAccount = selectedResAccountName.toString().trim();
         }
         Editor editor = settings.edit();
+
+        brandEditText = (EditText) findViewById(R.id.brandEditText);
+        String brandText = brandEditText.getText().toString();
+
+        editor.putString("brandText", brandText);
         editor.putString(getString(R.string.PREFERENCES_GOOGLE_ACCOUNT), selectedAccount);
         editor.putString(getString(R.string.PREFERENCES_ROOM_NAME), roomName);
         editor.putBoolean("addressBookOption", addressBookOptionView.isChecked());
@@ -282,4 +292,5 @@ public class SettingsActivity extends ReservatorActivity {
             }
         }
     }
+
 }

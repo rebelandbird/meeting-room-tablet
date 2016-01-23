@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnDismissListener;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.SpannableString;
@@ -68,6 +69,7 @@ public class RoomActivity extends ReservatorActivity implements OnMenuItemClickL
     AlertDialog alertDialog;
     int showLoadingCount = 0;
     private ProgressDialog progressDialog = null;
+    SharedPreferences settings;
 
     /**
      * Helper for starting a RoomActivity
@@ -225,11 +227,14 @@ public class RoomActivity extends ReservatorActivity implements OnMenuItemClickL
 
     @Override
     public void onResume() {
+        settings = getSharedPreferences(getString(R.string.PREFERENCES_NAME), Context.MODE_PRIVATE);
         proxy = this.getResApplication().getDataProxy();
         proxy.addDataUpdatedListener(this);
         refreshData();
         startAutoRefreshData();
         super.onResume();
+        TextView brandText = (TextView) findViewById(R.id.brandText);
+        brandText.setText(settings.getString("brandText", ""));
         trafficLights.enable();
     }
 
