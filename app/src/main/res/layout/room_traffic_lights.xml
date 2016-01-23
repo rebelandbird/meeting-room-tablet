@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/roomTitle"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:textColor="@color/TrafficLightText"
@@ -15,6 +15,19 @@
         android:textStyle="bold"
         android:textAllCaps="true"
         android:textIsSelectable="false"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/brandText"
+        android:textColor="@color/TrafficLightText"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textIsSelectable="false"
+        android:text="Rebel &amp; Hub" />
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -107,4 +120,6 @@
         android:textStyle="bold"
         android:textAllCaps="true"
         android:textIsSelectable="false"/>
+
+
 </RelativeLayout>
