@@ -27,8 +27,8 @@ import com.futurice.android.reservator.model.TimeSpan;
 
 public class RoomTrafficLights extends RelativeLayout {
     private static Date lastTimeConnected = new Date(0);
-    final long TOUCH_TIMEOUT = 30 * 1000;
-    final long TOUCH_TIMER = 10 * 1000;
+    final long TOUCH_TIMEOUT = 10 * 1000;
+    final long TOUCH_TIMER = 5 * 1000;
     final int QUICK_BOOK_THRESHOLD = 5; // minutes
     // Show "disconnected" warning icon on screen when disconnected for more than 5 minutes
     private final long DISCONNECTED_WARNING_ICON_THRESHOLD = 5 * 60 * 1000;
