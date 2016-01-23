@@ -56,7 +56,10 @@ public class RoomTrafficLights extends RelativeLayout {
         reservationInfoView = (TextView) findViewById(R.id.reservationInfo);
         bookNowView = (Button) findViewById(R.id.bookNow);
         disconnected = findViewById(R.id.disconnected);
-        updateConnected();
+
+        if(!this.isInEditMode()) {
+            updateConnected();
+        }
 
         setClickable(true);
         setVisibility(INVISIBLE);
